@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="bc2133cc7d934ada86250505181ba1d7" Name="Diagram1" ZoomLevel="82" >
+        <EntityTypeShape EntityType="Pharmacy_ER.AspNetRoles" Width="1.5" PointX="1.875" PointY="2.625" />
+        <EntityTypeShape EntityType="Pharmacy_ER.AspNetUserLogins" Width="1.875" PointX="7.875" PointY="2.375" />
+        <EntityTypeShape EntityType="Pharmacy_ER.AspNetUsers" Width="2" PointX="4.875" PointY="2.5" />
+        <AssociationConnector Association="Pharmacy_ER.AspNetUserRoles" />
+        <AssociationConnector Association="Pharmacy_ER.FK_dbo_AspNetUserLogins_dbo_AspNetUsers_UserId" />
+        <EntityTypeShape EntityType="Pharmacy_ER.Product" Width="1.5" PointX="4" PointY="6.875" />
+        <EntityTypeShape EntityType="Pharmacy_ER.Store" Width="1.5" PointX="10.125" PointY="7" />
+        <EntityTypeShape EntityType="Pharmacy_ER.Booking" Width="1.5" PointX="1.75" PointY="5.125" />
+        <EntityTypeShape EntityType="Pharmacy_ER.Order" Width="1.5" PointX="8.125" PointY="4.375" />
+        <EntityTypeShape EntityType="Pharmacy_ER.Rating" Width="1.5" PointX="10.125" PointY="4.5" />
+        <AssociationConnector Association="Pharmacy_ER.ProductOrder" />
+        <AssociationConnector Association="Pharmacy_ER.StoreOrder" />
+        <AssociationConnector Association="Pharmacy_ER.OrderRating" />
+        <AssociationConnector Association="Pharmacy_ER.AspNetUsersBooking" />
+        <AssociationConnector Association="Pharmacy_ER.AspNetUsersBooking1" />
+        <AssociationConnector Association="Pharmacy_ER.AspNetUsersOrder" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>
