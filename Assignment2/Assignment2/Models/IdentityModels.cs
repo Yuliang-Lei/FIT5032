@@ -16,6 +16,9 @@ namespace Assignment2.Models
             // Add custom user claims here
             return userIdentity;
         }
+
+        public virtual string FirstName { get; set; }
+        public virtual string LastName { get; set; }
     }
 
     public class ApplicationDbContext : IdentityDbContext<ApplicationUser>
@@ -29,5 +32,7 @@ namespace Assignment2.Models
         {
             return new ApplicationDbContext();
         }
+
+        public System.Data.Entity.DbSet<Assignment2.Models.ProfileViewModel> ProfileViewModels { get; set; }
     }
 }

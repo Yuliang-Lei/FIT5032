@@ -141,6 +141,7 @@
     </Reference>
     <Reference Include="Microsoft.AspNet.Identity.EntityFramework">
       <HintPath>..\packages\Microsoft.AspNet.Identity.EntityFramework.2.2.3\lib\net45\Microsoft.AspNet.Identity.EntityFramework.dll</HintPath>
+      <EmbedInteropTypes>False</EmbedInteropTypes>
     </Reference>
     <Reference Include="Owin">
       <HintPath>..\packages\Owin.1.0\lib\net40\Owin.dll</HintPath>
@@ -186,6 +187,7 @@
     <Compile Include="Controllers\AccountController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\ManageController.cs" />
+    <Compile Include="Controllers\ProductsController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
@@ -200,6 +202,9 @@
       <DependentUpon>Model1.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\AspNetUsers.cs">
+      <DependentUpon>RegisterModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Booking.cs">
       <DependentUpon>Model1.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\C__MigrationHistory.cs">
@@ -217,15 +222,39 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>Model1.tt</DependentUpon>
     </Compile>
-    <Compile Include="Models\Model1.Designer.cs">
+    <Compile Include="Models\ERD.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
-      <DependentUpon>Model1.edmx</DependentUpon>
+      <DependentUpon>ERD.edmx</DependentUpon>
     </Compile>
-    <Compile Include="Models\Pharmacy_ER.Designer.cs">
+    <Compile Include="Models\Order.cs">
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Product.cs">
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\ProductModel.cs" />
+    <Compile Include="Models\ProductsModel.cs" />
+    <Compile Include="Models\Rating.cs">
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\RegisterModel.Context.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
-      <DependentUpon>Pharmacy_ER.edmx</DependentUpon>
+      <DependentUpon>RegisterModel.Context.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\RegisterModel.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>RegisterModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\RegisterModel.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>RegisterModel.edmx</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Store.cs">
+      <DependentUpon>Model1.tt</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Startup.cs" />
@@ -250,13 +279,23 @@
     <Content Include="Images\Layout\logo.png" />
     <Content Include="Models\Model1.Context.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
-      <DependentUpon>Model1.edmx</DependentUpon>
+      <DependentUpon>ERD.edmx</DependentUpon>
       <LastGenOutput>Model1.Context.cs</LastGenOutput>
     </Content>
     <Content Include="Models\Model1.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
-      <DependentUpon>Model1.edmx</DependentUpon>
+      <DependentUpon>ERD.edmx</DependentUpon>
       <LastGenOutput>Model1.cs</LastGenOutput>
+    </Content>
+    <Content Include="Models\RegisterModel.Context.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>RegisterModel.edmx</DependentUpon>
+      <LastGenOutput>RegisterModel.Context.cs</LastGenOutput>
+    </Content>
+    <Content Include="Models\RegisterModel.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>RegisterModel.edmx</DependentUpon>
+      <LastGenOutput>RegisterModel.cs</LastGenOutput>
     </Content>
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.js" />
@@ -266,19 +305,19 @@
     <Content Include="fonts\Signika_Negative\SignikaNegative-Regular.ttf" />
     <Content Include="fonts\Signika_Negative\SignikaNegative-SemiBold.ttf" />
     <Content Include="fonts\Signika_Negative\SignikaNegative-VariableFont_wght.ttf" />
-    <EntityDeploy Include="Models\Model1.edmx">
+    <EntityDeploy Include="Models\ERD.edmx">
       <Generator>EntityModelCodeGenerator</Generator>
-      <LastGenOutput>Model1.Designer.cs</LastGenOutput>
+      <LastGenOutput>ERD.Designer.cs</LastGenOutput>
     </EntityDeploy>
-    <Content Include="Models\Model1.edmx.diagram">
-      <DependentUpon>Model1.edmx</DependentUpon>
+    <Content Include="Models\ERD.edmx.diagram">
+      <DependentUpon>ERD.edmx</DependentUpon>
     </Content>
-    <EntityDeploy Include="Models\Pharmacy_ER.edmx">
+    <EntityDeploy Include="Models\RegisterModel.edmx">
       <Generator>EntityModelCodeGenerator</Generator>
-      <LastGenOutput>Pharmacy_ER.Designer.cs</LastGenOutput>
+      <LastGenOutput>RegisterModel.Designer.cs</LastGenOutput>
     </EntityDeploy>
-    <Content Include="Models\Pharmacy_ER.edmx.diagram">
-      <DependentUpon>Pharmacy_ER.edmx</DependentUpon>
+    <Content Include="Models\RegisterModel.edmx.diagram">
+      <DependentUpon>RegisterModel.edmx</DependentUpon>
     </Content>
     <None Include="Scripts\jquery-3.4.1.intellisense.js" />
     <Content Include="Scripts\jquery-3.4.1.js" />
@@ -325,8 +364,14 @@
     <Content Include="Views\Shared\Lockout.cshtml" />
     <Content Include="Views\Shared\_LoginPartial.cshtml" />
     <Content Include="Views\Home\Index.cshtml" />
+    <Content Include="Views\Products\Create.cshtml" />
+    <Content Include="Views\Products\Delete.cshtml" />
+    <Content Include="Views\Products\Details.cshtml" />
+    <Content Include="Views\Products\Edit.cshtml" />
+    <Content Include="Views\Products\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
+    <Folder Include="Images\Product\" />
     <Folder Include="Views\Function\" />
   </ItemGroup>
   <ItemGroup>

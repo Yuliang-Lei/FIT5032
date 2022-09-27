@@ -13,10 +13,10 @@ namespace Assignment2.Models
     using System.Data.Entity;
     using System.Data.Entity.Infrastructure;
     
-    public partial class Entities : DbContext
+    public partial class Entities1 : DbContext
     {
-        public Entities()
-            : base("name=Entities")
+        public Entities1()
+            : base("name=Entities1")
         {
         }
     
@@ -30,5 +30,10 @@ namespace Assignment2.Models
         public virtual DbSet<AspNetUserClaims> AspNetUserClaims { get; set; }
         public virtual DbSet<AspNetUserLogins> AspNetUserLogins { get; set; }
         public virtual DbSet<AspNetUsers> AspNetUsers { get; set; }
+        public virtual DbSet<Booking> Booking { get; set; }
+        public virtual DbSet<Order> Order { get; set; }
+        public virtual DbSet<Product> Product { get; set; }
+        public virtual DbSet<Rating> Rating { get; set; }
+        public virtual DbSet<Store> Store { get; set; }
     }
 }
