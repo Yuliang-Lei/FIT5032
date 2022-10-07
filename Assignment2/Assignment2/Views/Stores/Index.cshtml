@@ -1,0 +1,70 @@
+﻿@model IEnumerable<Assignment2.Models.Store>
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Stores</h2>
+<div id="map" style="height:500px;"></div>
+<hr />
+@if (User.IsInRole("Admin"))
+{
+    <p>
+        @Html.ActionLink("Create New", "Create")
+    </p>
+}
+    <table class="table">
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.Name)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Address)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.PhoneNumber)
+            </th>
+            <th style="display:none;">
+                @Html.DisplayNameFor(model => model.Latitude)
+            </thstyle="display:none;">
+            <th style="display:none;">
+                @Html.DisplayNameFor(model => model.Longitude)
+            </th>
+            <th></th>
+        </tr>
+
+        @foreach (var item in Model)
+        {
+            <tr class="coordinates">
+                <td class="description">
+                    <a href="@Url.Action("Details", new { id = item.Id })">
+                        @Html.DisplayFor(modelItem => item.Name)
+                    </a>
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Address)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.PhoneNumber)
+                </td>
+                <td class="latitude" style="display:none;">
+                    @Html.DisplayFor(modelItem => item.Latitude)
+                </td>
+                <td class="longitude" style="display:none;">
+                    @Html.DisplayFor(modelItem => item.Longitude)
+                </td>
+                @if (User.IsInRole("Admin"))
+                {
+                    <td>
+                        @Html.ActionLink("Edit", "Edit", new { id = item.Id }) |
+                        @Html.ActionLink("Delete", "Delete", new { id = item.Id })
+                    </td>
+                }
+            </tr>
+        }
+
+    </table>
+    @section Scripts {
+        @Scripts.Render("~/bundles/mapbox")
+    }
