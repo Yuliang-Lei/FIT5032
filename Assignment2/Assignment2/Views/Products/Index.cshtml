@@ -7,22 +7,50 @@
 
 <h2>Welcome to First Choice Pharmacy!</h2>
 
-@if(User.IsInRole("Admin")) { 
+@if (User.IsInRole("Admin"))
+{
     <p>
         @Html.ActionLink("Create New", "Create")
     </p>
 }
 
-<div class="row">
-    @foreach (var item in Model)
-    {
-        <div class="col-sm-4">
-            <a href="@Url.Action("Details", new { id = item.Id })" style="text-decoration:none;color:black">
-            <img class="img-thumbnail img-rounded" style="height:300px;width:300px;" src="@Url.Content("~/Images/Product/" + item.Path)" alt="@Html.DisplayFor(modelItem => item.Title)" />
-            <h3 style="overflow:hidden;white-space:nowrap;text-overflow:ellipsis">@Html.DisplayFor(modelItem => item.Title)</h3>
-            <h2>$@Html.DisplayFor(modelItem => item.Price)</h2>
-            </a>
-        </div>
-    }
-</div>
+<table class="table">
+    <thead>
+        <tr>
+            <th></th>
+            <th>
+                @Html.DisplayNameFor(model => model.Title)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Price)
+            </th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+
+                <tr>
+                    <td><img style="height:300px;width:300px;" src="@Url.Content("~/Images/Product/" + item.Path)" alt="@Html.DisplayFor(modelItem => item.Title)" /></td>
+                    <td><a href="@Url.Action("Details", new { id = item.Id })">
+                           <h3>@Html.DisplayFor(modelItem => item.Title)</h3>
+                        </a>
+                   </td>
+                    <td><h2>$@Html.DisplayFor(modelItem => item.Price)</h2></td>
+                </tr>
+        }
+    </tbody>
+</table>
+@section Scripts {
+
+    @Scripts.Render("~/Scripts/DataTables/jquery.dataTables.js")
+    @Scripts.Render("~/Scripts/DataTables/dataTables.bootstrap.js")
+    <script>
+ $(document).ready(function () {
+ $('.table').DataTable();
+ });
+    </script>
+}
+<link href="~/Content/DataTables/css/dataTables.bootstrap.min.css"
+      rel="stylesheet" />
 

@@ -5,6 +5,7 @@ namespace Assignment2.Models
     using System.ComponentModel.DataAnnotations;
     using System.ComponentModel.DataAnnotations.Schema;
     using System.Data.Entity.Spatial;
+    using System.Web.Mvc;
 
     [Table("Product")]
     public partial class Product
@@ -15,6 +16,7 @@ namespace Assignment2.Models
         public string Title { get; set; }
 
         [Required]
+        [AllowHtml]
         public string Description { get; set; }
 
         [Required]

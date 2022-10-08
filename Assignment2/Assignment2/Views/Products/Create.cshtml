@@ -27,7 +27,7 @@
     <div class="form-group">
         @Html.LabelFor(model => model.Description, htmlAttributes: new { @class = "control-label col-md-2" })
         <div class="col-md-10">
-            @Html.TextAreaFor(model => model.Description, new { htmlAttributes = new { @class = "form-control", @id= "exampleFormControlTextarea1", @rows="3" } })
+            @Html.EditorFor(model => model.Description, new { htmlAttributes = new { @class = "form-control", @id= "mytextarea" } })
             @Html.ValidationMessageFor(model => model.Description, "", new { @class = "text-danger" })
         </div>
     </div>
@@ -77,4 +77,9 @@
 
 @section Scripts {
     @Scripts.Render("~/bundles/jqueryval")
+    <script>
+        tinymce.init({
+            selector: "#mytextarea"
+        })
+    </script>
 }

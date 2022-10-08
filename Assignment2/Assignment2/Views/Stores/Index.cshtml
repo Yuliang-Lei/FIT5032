@@ -14,7 +14,8 @@
         @Html.ActionLink("Create New", "Create")
     </p>
 }
-    <table class="table">
+<table class="table">
+    <thead>
         <tr>
             <th>
                 @Html.DisplayNameFor(model => model.Name)
@@ -27,12 +28,14 @@
             </th>
             <th style="display:none;">
                 @Html.DisplayNameFor(model => model.Latitude)
-            </thstyle="display:none;">
+            </th>
             <th style="display:none;">
                 @Html.DisplayNameFor(model => model.Longitude)
             </th>
             <th></th>
         </tr>
+    </thead>
+    <tbody>
 
         @foreach (var item in Model)
         {
@@ -63,8 +66,17 @@
                 }
             </tr>
         }
-
-    </table>
-    @section Scripts {
-        @Scripts.Render("~/bundles/mapbox")
-    }
+    </tbody>
+</table>
+@section Scripts {
+    @Scripts.Render("~/bundles/mapbox")
+    @Scripts.Render("~/Scripts/DataTables/jquery.dataTables.js")
+    @Scripts.Render("~/Scripts/DataTables/dataTables.bootstrap.js")
+    <script>
+ $(document).ready(function () {
+ $('.table').DataTable();
+ });
+    </script>
+}
+<link href="~/Content/DataTables/css/dataTables.bootstrap.min.css"
+      rel="stylesheet" />

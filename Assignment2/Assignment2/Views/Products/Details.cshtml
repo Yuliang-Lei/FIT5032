@@ -13,7 +13,7 @@
         <div class="col-sm-6"></div>
     </div>
     <div class="row">
-        <div class="col-sm-6" style="text-align:center"><img class="img-thumbnail img-rounded" style="height:400px;width:400px;"  src="@Url.Content("~/Images/Product/" + @Html.DisplayFor(model => model.Path))" alt="@Html.DisplayFor(model => model.Title)" /></div>
+        <div class="col-sm-6" style="text-align:center"><img class="img-thumbnail img-rounded" style="height:400px;width:400px;" src="@Url.Content("~/Images/Product/" + @Html.DisplayFor(model => model.Path))" alt="@Html.DisplayFor(model => model.Title)" /></div>
         <div class="col-sm-6">
             <h1>@Html.DisplayFor(model => model.Title)</h1>
             <h2>$@Html.DisplayFor(model => model.Price)</h2>
@@ -21,15 +21,24 @@
         </div>
     </div>
     <h2>Information</h2>
-    <p>@Html.DisplayFor(model => model.Description)</p>
+    @*@Html.DisplayFor(model => model.Description)*@
+    <div>@Html.Raw(Model.Description)</div>
 </div>
 <p>
     @if (User.IsInRole("Admin"))
     {
         @Html.ActionLink("Edit", "Edit", new { id = Model.Id })
         <br />
-        @Html.ActionLink("Delete", "Delete", new { id = Model.Id }) 
+        @Html.ActionLink("Delete", "Delete", new { id = Model.Id })
         <br />
     }
     @Html.ActionLink("Back", "Index")
 </p>
+@section Scripts {
+    @Scripts.Render("~/bundles/jqueryval")
+    <script>
+    tinymce.init({
+        selector: "#mytextarea"
+    })
+    </script>
+}
