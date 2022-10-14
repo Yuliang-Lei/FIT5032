@@ -15,6 +15,7 @@ namespace Assignment2.Models
         }
 
         public virtual DbSet<Product> Product { get; set; }
+        public virtual DbSet<Rating> Rating { get; set; }
 
         protected override void OnModelCreating(DbModelBuilder modelBuilder)
         {

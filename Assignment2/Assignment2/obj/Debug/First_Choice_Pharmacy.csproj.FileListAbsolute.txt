@@ -87,7 +87,6 @@ F:\Repositories\FIT5032\Assignment2\Assignment2\bin\System.Web.Razor.xml
 F:\Repositories\FIT5032\Assignment2\Assignment2\bin\System.Web.WebPages.xml
 F:\Repositories\FIT5032\Assignment2\Assignment2\bin\System.Web.WebPages.Deployment.xml
 F:\Repositories\FIT5032\Assignment2\Assignment2\bin\System.Web.WebPages.Razor.xml
-F:\Repositories\FIT5032\Assignment2\Assignment2\bin\Newtonsoft.Json.xml
 F:\Repositories\FIT5032\Assignment2\Assignment2\bin\Antlr3.Runtime.pdb
 F:\Repositories\FIT5032\Assignment2\Assignment2\bin\System.Net.Http.Formatting.xml
 F:\Repositories\FIT5032\Assignment2\Assignment2\bin\System.Web.Http.xml
@@ -226,3 +225,7 @@ F:\Web Application\Assignment2\Assignment2\obj\Debug\First_Choice_Pharmacy.cspro
 F:\Web Application\Assignment2\Assignment2\obj\Debug\First_Choice_Pharmacy.csproj.CopyComplete
 F:\Web Application\Assignment2\Assignment2\obj\Debug\Assignment2.dll
 F:\Web Application\Assignment2\Assignment2\obj\Debug\Assignment2.pdb
+F:\Repositories\FIT5032\Assignment2\Assignment2\bin\SendGrid.dll
+F:\Repositories\FIT5032\Assignment2\Assignment2\bin\StarkbankEcdsa.dll
+F:\Repositories\FIT5032\Assignment2\Assignment2\bin\SendGrid.pdb
+F:\Repositories\FIT5032\Assignment2\Assignment2\bin\SendGrid.xml

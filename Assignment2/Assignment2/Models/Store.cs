@@ -21,9 +21,11 @@ namespace Assignment2.Models
         public string PhoneNumber { get; set; }
 
         [Column(TypeName = "numeric")]
+        [DisplayFormat(DataFormatString = "{0:###.########}")]
         public decimal Latitude { get; set; }
 
         [Column(TypeName = "numeric")]
+        [DisplayFormat(DataFormatString = "{0:###.########}")]
         public decimal Longitude { get; set; }
     }
 }

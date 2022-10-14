@@ -5,7 +5,7 @@
 * 
 * @author Jian Liew <jian.liew@monash.edu>
 */
-const TOKEN = "pk.eyJ1IjoicnllbGVpIiwiYSI6ImNsOHh1OTV6MjAweGozcHBscnF4cDJzOGEifQ.46Qri6XOPhJUAW9j649-BA";
+const TOKEN = "ENTER YOUR API HERE";
 var locations = [];
 // The first step is obtain all the latitude and longitude from the HTML
 // The below is a simple jQuery selector
@@ -62,7 +62,7 @@ map.on('load', function () {
         }
     });
     map.addControl(new MapboxGeocoder({
-        accessToken: mapboxgl.accessToken
+ accessToken: mapboxgl.accessToken
  }));;
 map.addControl(new mapboxgl.NavigationControl());
 // When a click event occurs on a feature in the places layer, open a popup at the

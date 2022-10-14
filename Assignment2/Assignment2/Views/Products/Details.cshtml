@@ -18,6 +18,7 @@
             <h1>@Html.DisplayFor(model => model.Title)</h1>
             <h2>$@Html.DisplayFor(model => model.Price)</h2>
             <p>Category: @Html.DisplayFor(model => model.Category)</p>
+            <a href='/Ratings?productid=@Model.Id'>View Ratings</a>
         </div>
     </div>
     <h2>Information</h2>

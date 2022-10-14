@@ -28,6 +28,7 @@ namespace Assignment2.Controllers
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
+            ProductsModel pm = new ProductsModel();
             Product product = db.Product.Find(id);
             if (product == null)
             {

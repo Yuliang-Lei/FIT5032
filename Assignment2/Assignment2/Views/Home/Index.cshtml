@@ -30,11 +30,13 @@
             </a>
         </div>
         <div class="item">
-            <img src="~/Images/Home/pic3.jpg" alt="Third slide" />
-            <div class="carousel-caption">
-                <h2>Excellent Pharmacists</h2>
-                <p>Click on Services and make an appointment with our pharmacist.</p>
-            </div>
+            <a href="@Url.Action("Index", "Bookings")">
+                <img src="~/Images/Home/pic3.jpg" alt="Third slide" />
+                <div class="carousel-caption">
+                    <h2>Excellent Pharmacists</h2>
+                    <p>Click on Services and make an appointment with our pharmacist.</p>
+                </div>
+            </a>
         </div>
     </div>
     <!-- Carousel navigation -->
@@ -54,7 +56,9 @@
         </a>
     </div>
     <div class="col-sm-4">
-        <img src="~/Images/Home/book with pharmacist.png" alt="Book with your pharmarcist now!" style="height:200px;width:100%" />
+        <a href="@Url.Action("Index", "Bookings")">
+            <img src="~/Images/Home/book with pharmacist.png" alt="Book with your pharmarcist now!" style="height:200px;width:100%" />
+        </a>
     </div>
     <div class="col-sm-4">
         <a href="@Url.Action("Index", "Stores")">

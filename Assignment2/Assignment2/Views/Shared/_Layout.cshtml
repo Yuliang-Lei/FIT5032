@@ -11,16 +11,17 @@
     <script src='https://api.mapbox.com/mapbox-gl-js/v0.47.0/mapbox-gl.js'></script>
     <link href='https://api.mapbox.com/mapbox-gl-js/v0.47.0/mapbox-gl.css' rel='stylesheet' />
     @*This is used for the Geocoding Mapbox API*@
-    <script src='https://api.mapbox.com/mapbox-gl-js/plugins/mapbox-gl-geocoder/v2.2.0/mapbox-glgeocoder.min.js'></script>
-    <link rel='stylesheet' href='https://api.mapbox.com/mapbox-gl-js/plugins/mapbox-glgeocoder/v2.2.0/mapbox-gl-geocoder.css' type='text/css' />
+    <script src='https://api.mapbox.com/mapbox-gl-js/plugins/mapbox-gl-geocoder/v2.2.0/mapbox-gl-geocoder.min.js'></script>
+    <link rel='stylesheet' href='https://api.mapbox.com/mapbox-gl-js/plugins/mapbox-gl-geocoder/v2.2.0/mapbox-gl-geocoder.css' type='text/css' />
     <script src="~/Scripts/tinymce/tinymce.min.js"></script>
+    <link href="~/Content/fullcalendar.css" rel="stylesheet" />
 </head>
 <body>
     <div class="navbar navbar-fixed-top" style="background-color: #2E7D32">
         <div class="container">
             <a href="@Url.Action("Index", "Home")" class="navbar-brand">
-                <div><img src="@Url.Content("~/Images/Layout/logo.png")" height="30" width="30" alt="FirstChoiceLogo"/></div>
-                <div>First Choice Pharmacy</div> 
+                <div><img src="@Url.Content("~/Images/Layout/logo.png")" height="30" width="30" alt="FirstChoiceLogo" /></div>
+                <div>First Choice Pharmacy</div>
             </a>
             <div class="navbar-collapse collapse">
                 <ul class="nav navbar-nav">
@@ -29,6 +30,10 @@
                     <li>@Html.ActionLink("About", "About", "Home")</li>
                     <li>@Html.ActionLink("Contact", "Contact", "Home")</li>
                     <li>@Html.ActionLink("Stores", "Index", "Stores")</li>
+                    @if (User.Identity.IsAuthenticated)
+                    {
+                        <li>@Html.ActionLink("My Booking", "Index", "Bookings")</li>
+                    }
                 </ul>
                 @Html.Partial("_LoginPartial")
             </div>
