@@ -1,12 +1,15 @@
 ﻿@model Assignment2.Models.Rating
 
 @{
-    ViewBag.Title = "Create";
+    ViewBag.Title = "Add a Review";
     Layout = "~/Views/Shared/_Layout.cshtml";
+    string url = System.Web.HttpContext.Current.Request.Url.ToString();
+    Uri uri = new Uri(url);
+    string productId = HttpUtility.ParseQueryString(uri.Query).Get("productid");
 }
 
 <h2>Make a Comment</h2>
-
+<a href="/Ratings?productid=@productId">Back</a>
 @using (Html.BeginForm())
 {
     @Html.AntiForgeryToken()
@@ -17,7 +20,6 @@
 
 
 <div class="form-horizontal">
-    <h4>Rating</h4>
     <hr />
     @Html.ValidationSummary(true, "", new { @class = "text-danger" })
     <div class="form-group">

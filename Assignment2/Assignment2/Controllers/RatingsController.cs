@@ -15,7 +15,7 @@ namespace Assignment2.Controllers
     {
         private RatingViewModel db = new RatingViewModel();
 
-        // GET: Ratings
+        // GET: Ratings?productid = 5
         public ActionResult Index()
         {
             string url = System.Web.HttpContext.Current.Request.Url.ToString();

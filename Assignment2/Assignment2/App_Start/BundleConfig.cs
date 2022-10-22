@@ -28,6 +28,9 @@ namespace Assignment2
             bundles.Add(new StyleBundle("~/Content/css").Include(
                       "~/Content/bootstrap.css",
                       "~/Content/site.css"));
+            bundles.Add(new ScriptBundle("~/bundles/chatbot").Include(
+                        "~/Scripts/chat.js",
+                        "~/Scripts/responses.js"));
             bundles.Add(new ScriptBundle("~/bundles/fullcalendar").Include(
                         "~/Scripts/lib/jquery.min.js",
                         "~/Scripts/lib/moment.min.js",

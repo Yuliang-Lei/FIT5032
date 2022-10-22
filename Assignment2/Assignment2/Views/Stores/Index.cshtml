@@ -1,21 +1,45 @@
 ﻿@model IEnumerable<Assignment2.Models.Store>
 
     @{
-        ViewBag.Title = "Index";
+        ViewBag.Title = "Our Stores";
         Layout = "~/Views/Shared/_Layout.cshtml";
     }
+<style>
+    #menu {
+        position: absolute;
+        background: #efefef;
+        padding: 10px;
+    }
+</style>
     <h2>Stores</h2>
     <div id="map" style="height:500px;"></div>
-    <hr />
+    <div id="menu">
+        <input id="satellite-v9" type="radio" name="rtoggle" value="satellite" checked="checked">
+        <!-- See a list of Mapbox-hosted public styles at -->
+        <!-- https://docs.mapbox.com/api/maps/styles/#mapbox-styles -->
+        <label for="satellite-v9">satellite</label>
+        <input id="light-v10" type="radio" name="rtoggle" value="light">
+        <label for="light-v10">light</label>
+        <input id="dark-v10" type="radio" name="rtoggle" value="dark">
+        <label for="dark-v10">dark</label>
+        <input id="streets-v11" type="radio" name="rtoggle" value="streets">
+        <label for="streets-v11">streets</label>
+        <input id="outdoors-v11" type="radio" name="rtoggle" value="outdoors">
+        <label for="outdoors-v11">outdoors</label>
+    </div>
+
     @if (User.IsInRole("Admin"))
     {
         <p>
-            @Html.ActionLink("Create New", "Create")
+            @Html.ActionLink("Add a Store", "Create")
         </p>
     }
-    <table class="table">
+    <table class="table" style="display:none">
         <thead>
             <tr>
+                <th>
+                    @Html.DisplayNameFor(model => model.Id)
+                </th>
                 <th>
                     @Html.DisplayNameFor(model => model.Name)
                 </th>
@@ -25,10 +49,10 @@
                 <th>
                     @Html.DisplayNameFor(model => model.PhoneNumber)
                 </th>
-                <th style="display:none;">
+                <th>
                     @Html.DisplayNameFor(model => model.Latitude)
                 </th>
-                <th style="display:none;">
+                <th>
                     @Html.DisplayNameFor(model => model.Longitude)
                 </th>
             </tr>
@@ -38,21 +62,22 @@
             @foreach (var item in Model)
             {
                 <tr class="coordinates">
-                    <td class="description">
-                        <a href="@Url.Action("Details", new { id = item.Id })">
-                            @Html.DisplayFor(modelItem => item.Name)
-                        </a>
+                    <td class="storeid">
+                        @Html.DisplayFor(modelItem => item.Id)
                     </td>
-                    <td>
+                    <td class="name">
+                            @Html.DisplayFor(modelItem => item.Name)
+                    </td>
+                    <td class="address">
                         @Html.DisplayFor(modelItem => item.Address)
                     </td>
-                    <td>
+                    <td class="phone">
                         @Html.DisplayFor(modelItem => item.PhoneNumber)
                     </td>
-                    <td class="latitude" style="display:none;">
+                    <td class="latitude">
                         @item.Latitude.ToString("###.########")
                     </td>
-                    <td class="longitude" style="display:none;">
+                    <td class="longitude">
                         @item.Longitude.ToString("###.########")
                     </td>
                 </tr>
@@ -61,13 +86,4 @@
     </table>
     @section Scripts {
         @Scripts.Render("~/bundles/mapbox")
-        @Scripts.Render("~/Scripts/DataTables/jquery.dataTables.js")
-        @Scripts.Render("~/Scripts/DataTables/dataTables.bootstrap.js")
-        <script>
-            $(document).ready(function () {
-                $('.table').DataTable();
-            });
-        </script>
     }
-    <link href="~/Content/DataTables/css/dataTables.bootstrap.min.css"
-          rel="stylesheet" />

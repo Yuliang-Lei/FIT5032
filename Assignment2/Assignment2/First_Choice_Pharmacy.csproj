@@ -282,6 +282,7 @@
     <Content Include="Content\bootstrap-theme.min.css" />
     <Content Include="Content\bootstrap.css" />
     <Content Include="Content\bootstrap.min.css" />
+    <Content Include="Content\chat.css" />
     <Content Include="Content\DataTables\css\autoFill.bootstrap.css" />
     <Content Include="Content\DataTables\css\autoFill.bootstrap.min.css" />
     <Content Include="Content\DataTables\css\autoFill.bootstrap4.css" />
@@ -444,6 +445,8 @@
     <Content Include="Content\fullcalendar.print.css" />
     <Content Include="Content\fullcalendar.print.min.css" />
     <Content Include="Content\LayoutStyle.css" />
+    <Content Include="Content\mapbox-gl-geocoder.css" />
+    <Content Include="Content\mapbox-gl.css" />
     <Content Include="favicon.ico" />
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
     <Content Include="Global.asax" />
@@ -476,6 +479,7 @@
       <DependentUpon>RegisterModel.edmx</DependentUpon>
       <LastGenOutput>RegisterModel.cs</LastGenOutput>
     </Content>
+    <Content Include="Scripts\backtotop.js" />
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.js" />
     <Content Include="fonts\Signika_Negative\SignikaNegative-Bold.ttf" />
@@ -503,6 +507,7 @@
     <Content Include="Content\DataTables\css\common.scss" />
     <Content Include="Scripts\calendar.js" />
     <None Include="Scripts\jquery-3.4.1.intellisense.js" />
+    <Content Include="Scripts\chat.js" />
     <Content Include="Scripts\DataTables\autoFill.bootstrap.js" />
     <Content Include="Scripts\DataTables\autoFill.bootstrap.min.js" />
     <Content Include="Scripts\DataTables\autoFill.bootstrap4.js" />
@@ -682,11 +687,14 @@
     <Content Include="Scripts\locale\zh-cn.js" />
     <Content Include="Scripts\locale\zh-tw.js" />
     <Content Include="Scripts\location.js" />
+    <Content Include="Scripts\mapbox-gl-geocoder.min.js" />
+    <Content Include="Scripts\mapbox-gl.js" />
     <Content Include="Scripts\modernizr-2.8.3.js" />
     <Content Include="Scripts\moment-with-locales.js" />
     <Content Include="Scripts\moment-with-locales.min.js" />
     <Content Include="Scripts\moment.js" />
     <Content Include="Scripts\moment.min.js" />
+    <Content Include="Scripts\responses.js" />
     <Content Include="Scripts\tinymce\icons\default\icons.js" />
     <Content Include="Scripts\tinymce\icons\default\icons.min.js" />
     <Content Include="Scripts\tinymce\license.txt" />
@@ -860,7 +868,8 @@
     <Content Include="Views\Ratings\Details.cshtml" />
     <Content Include="Views\Ratings\Edit.cshtml" />
     <Content Include="Views\Ratings\Index.cshtml" />
-    <Content Include="Views\Ratings\Test.cshtml" />
+    <Content Include="Views\Home\SendAds.cshtml" />
+    <Content Include="Views\Home\SendAdTo.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Images\Product\" />

@@ -7,6 +7,7 @@ using System.Net;
 using System.Web;
 using System.Web.Mvc;
 using Assignment2.Models;
+using FIT5032_Week08A.Utils;
 using Microsoft.AspNet.Identity;
 
 namespace Assignment2.Controllers
@@ -93,27 +94,33 @@ namespace Assignment2.Controllers
             {
                 if (booking.Start >= events[i].Start.AddMinutes(-15) && booking.Start < events[i].End)
                 {
-                    ViewBag.Result = "Sorry, this time has been allocated.";
+                    ViewBag.Error = "Sorry, this time has been allocated.";
                     return View(booking);
                 }
             }
             if(booking.Start < DateTime.Now)
             {
-                ViewBag.Result = "Sorry, you can only allocate time after now.";
+                ViewBag.Error = "Sorry, you can only allocate time after now.";
                 return View(booking);
             }
             if (ModelState.IsValid)
             {
                 db.Bookings.Add(booking);
                 db.SaveChanges();
-                ViewBag.Result = "The appointment application has been sent to the Pharmacists, please check your bookings " +
+                ViewBag.Success = "The appointment application has been sent to the Pharmacists, please check your bookings or email" +
                     "and wait for the confirmation. If your appointment has been confirmed, it will be added into your calendar.";
+                EmailSender es = new EmailSender();
+                AspNetUsers users = db.AspNetUsers.Find(booking.PatientId);
+                string email = users.Email;
+                string name = users.FirstName + " " + users.LastName;
+                es.ApplyBooking(email, name);
                 return View(booking);
             }
 
             return View(booking);
         }
 
+        //GET: Bookings/Applications
         [Authorize(Roles ="Pharmacist")]
         public ActionResult Applications()
         {
@@ -124,6 +131,7 @@ namespace Assignment2.Controllers
             return View(events);
         }
 
+        //GET: Bookings/Modify
         [Authorize]
         public ActionResult Modify()
         {
@@ -223,6 +231,11 @@ namespace Assignment2.Controllers
             {
                 db.Entry(booking).State = EntityState.Modified;
                 db.SaveChanges();
+                EmailSender es = new EmailSender();
+                AspNetUsers users = db.AspNetUsers.Find(booking.PatientId);
+                string email = users.Email;
+                string name = users.FirstName + " " + users.LastName;
+                es.ConfirmBooking(email, name);
                 return RedirectToAction("Index");
             }
             return View(booking);

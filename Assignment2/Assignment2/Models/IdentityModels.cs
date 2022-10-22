@@ -19,6 +19,7 @@ namespace Assignment2.Models
 
         public virtual string FirstName { get; set; }
         public virtual string LastName { get; set; }
+
     }
 
     public class ApplicationDbContext : IdentityDbContext<ApplicationUser>

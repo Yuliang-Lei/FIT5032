@@ -111,6 +111,10 @@ F:\Repositories\FIT5032\Assignment2\Assignment2\obj\Debug\First_Choice_Pharmacy.
 F:\Repositories\FIT5032\Assignment2\Assignment2\obj\Debug\First_Choice_Pharmacy.csproj.CopyComplete
 F:\Repositories\FIT5032\Assignment2\Assignment2\obj\Debug\Assignment2.dll
 F:\Repositories\FIT5032\Assignment2\Assignment2\obj\Debug\Assignment2.pdb
+F:\Repositories\FIT5032\Assignment2\Assignment2\bin\SendGrid.dll
+F:\Repositories\FIT5032\Assignment2\Assignment2\bin\StarkbankEcdsa.dll
+F:\Repositories\FIT5032\Assignment2\Assignment2\bin\SendGrid.pdb
+F:\Repositories\FIT5032\Assignment2\Assignment2\bin\SendGrid.xml
 F:\Web Application\Assignment2\Assignment2\bin\Assignment2.dll.config
 F:\Web Application\Assignment2\Assignment2\bin\Assignment2.dll
 F:\Web Application\Assignment2\Assignment2\bin\Assignment2.pdb
@@ -182,6 +186,8 @@ F:\Web Application\Assignment2\Assignment2\bin\Microsoft.Owin.Security.Twitter.d
 F:\Web Application\Assignment2\Assignment2\bin\Microsoft.Web.Infrastructure.dll
 F:\Web Application\Assignment2\Assignment2\bin\Newtonsoft.Json.dll
 F:\Web Application\Assignment2\Assignment2\bin\Owin.dll
+F:\Web Application\Assignment2\Assignment2\bin\SendGrid.dll
+F:\Web Application\Assignment2\Assignment2\bin\StarkbankEcdsa.dll
 F:\Web Application\Assignment2\Assignment2\bin\System.Net.Http.Formatting.dll
 F:\Web Application\Assignment2\Assignment2\bin\System.Web.Helpers.dll
 F:\Web Application\Assignment2\Assignment2\bin\System.Web.Http.dll
@@ -193,6 +199,8 @@ F:\Web Application\Assignment2\Assignment2\bin\System.Web.WebPages.Deployment.dl
 F:\Web Application\Assignment2\Assignment2\bin\System.Web.WebPages.dll
 F:\Web Application\Assignment2\Assignment2\bin\System.Web.WebPages.Razor.dll
 F:\Web Application\Assignment2\Assignment2\bin\WebGrease.dll
+F:\Web Application\Assignment2\Assignment2\bin\SendGrid.pdb
+F:\Web Application\Assignment2\Assignment2\bin\SendGrid.xml
 F:\Web Application\Assignment2\Assignment2\bin\System.Web.Helpers.xml
 F:\Web Application\Assignment2\Assignment2\bin\System.Web.Mvc.xml
 F:\Web Application\Assignment2\Assignment2\bin\System.Web.Optimization.xml
@@ -200,7 +208,6 @@ F:\Web Application\Assignment2\Assignment2\bin\System.Web.Razor.xml
 F:\Web Application\Assignment2\Assignment2\bin\System.Web.WebPages.xml
 F:\Web Application\Assignment2\Assignment2\bin\System.Web.WebPages.Deployment.xml
 F:\Web Application\Assignment2\Assignment2\bin\System.Web.WebPages.Razor.xml
-F:\Web Application\Assignment2\Assignment2\bin\Newtonsoft.Json.xml
 F:\Web Application\Assignment2\Assignment2\bin\Antlr3.Runtime.pdb
 F:\Web Application\Assignment2\Assignment2\bin\System.Net.Http.Formatting.xml
 F:\Web Application\Assignment2\Assignment2\bin\System.Web.Http.xml
@@ -225,7 +232,3 @@ F:\Web Application\Assignment2\Assignment2\obj\Debug\First_Choice_Pharmacy.cspro
 F:\Web Application\Assignment2\Assignment2\obj\Debug\First_Choice_Pharmacy.csproj.CopyComplete
 F:\Web Application\Assignment2\Assignment2\obj\Debug\Assignment2.dll
 F:\Web Application\Assignment2\Assignment2\obj\Debug\Assignment2.pdb
-F:\Repositories\FIT5032\Assignment2\Assignment2\bin\SendGrid.dll
-F:\Repositories\FIT5032\Assignment2\Assignment2\bin\StarkbankEcdsa.dll
-F:\Repositories\FIT5032\Assignment2\Assignment2\bin\SendGrid.pdb
-F:\Repositories\FIT5032\Assignment2\Assignment2\bin\SendGrid.xml

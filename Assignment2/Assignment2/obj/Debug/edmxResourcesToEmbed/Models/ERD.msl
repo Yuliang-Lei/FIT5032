@@ -96,8 +96,7 @@
           <ScalarProperty Name="Id" ColumnName="Id" />
           <ScalarProperty Name="Name" ColumnName="Name" />
           <ScalarProperty Name="Address" ColumnName="Address" />
-          <ScalarProperty Name="Postcode" ColumnName="Postcode" />
-          <ScalarProperty Name="OpeningTime" ColumnName="OpeningTime" />
+          <ScalarProperty Name="PhoneNumber" ColumnName="OpeningTime" />
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>

@@ -9,6 +9,7 @@
 }
 body{
     font-family: 'Signika Negative';
+    font-size: medium;
 }
 .navbar-brand{
     color: white;
@@ -25,6 +26,8 @@ body{
 }
 .nav.navbar-nav li a:hover{
     background-color: #1B5E20;
+    color: white;
+    text-decoration: none;
 }
 .carousel .item {
     height: 500px;

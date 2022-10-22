@@ -66,8 +66,8 @@ namespace Assignment2
 
             app.UseGoogleAuthentication(new GoogleOAuth2AuthenticationOptions()
             {
-                ClientId = "ENTER YOUR ID HERE",
-                ClientSecret = "ENTER YOUR SECRET HERE"
+                ClientId = "YOUR-GOOGLE-CLIENT-ID",
+                ClientSecret = "YOUR-GOOGLE-SECRET"
             });
         }
     }

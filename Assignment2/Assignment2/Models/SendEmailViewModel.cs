@@ -1,6 +1,9 @@
-﻿using System;
+﻿using SendGrid.Helpers.Mail;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
+using System.ComponentModel.DataAnnotations.Schema;
+using System.Data.Entity;
 using System.Linq;
 using System.Web;
 
@@ -10,7 +13,6 @@ namespace Assignment2.Models
     {
         [Display(Name = "Email address")]
         [Required(ErrorMessage = "Please enter an email address.")]
-        [EmailAddress(ErrorMessage = "Invalid Email Address")]
         public string ToEmail { get; set; }
 
         [Required(ErrorMessage = "Please enter a subject.")]
@@ -20,5 +22,6 @@ namespace Assignment2.Models
         public string Contents { get; set; }
 
         public string Upload { get; set; }
+
     }
 }

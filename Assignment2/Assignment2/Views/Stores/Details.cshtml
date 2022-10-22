@@ -1,12 +1,12 @@
 ﻿@model Assignment2.Models.Store
 
 @{
-    ViewBag.Title = "Details";
+    ViewBag.Title = "Store Details";
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
 <h2>Details</h2>
-<div id="map" style="height:500px;"></div>
+@Html.ActionLink("Back", "Index")
 <div>
     <hr />
     <dl class="coordinates">
@@ -14,7 +14,7 @@
             @Html.DisplayNameFor(model => model.Name)
         </dt>
 
-        <dd class="description">
+        <dd>
             @Html.DisplayFor(model => model.Name)
         </dd>
 
@@ -60,8 +60,5 @@
         @Html.ActionLink("Delete", "Delete", new { id = Model.Id })
     }
     <br />
-    @Html.ActionLink("Back to List", "Index")
+
 </p>
-@section Scripts {
-    @Scripts.Render("~/bundles/mapbox")
-}

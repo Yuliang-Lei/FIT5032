@@ -14,6 +14,7 @@ namespace Assignment2.Models
         }
 
         public virtual DbSet<Booking> Bookings { get; set; }
+        public virtual DbSet<AspNetUsers> AspNetUsers { get; set; }
 
         protected override void OnModelCreating(DbModelBuilder modelBuilder)
         {
