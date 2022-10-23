@@ -4,7 +4,10 @@
     ViewBag.Title = "Modify Bookings";
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
-
+@if (User.IsInRole("Admin"))
+{
+    { Response.Redirect("/Bookings/ViewAllBookings"); }
+}
 <h2>Modify</h2>
 @Html.ActionLink("Back", "Index")
 <table class="table">

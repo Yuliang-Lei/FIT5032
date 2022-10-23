@@ -43,6 +43,13 @@ namespace Assignment2.Controllers
             }
         }
 
+        //GET: Bookings/ViewAllBookings
+        [Authorize(Roles = "Admin")]
+        public ActionResult ViewAllBookings()
+        {
+            return View(db.Bookings.ToList());
+        }
+
         // GET: Bookings/Details/5
         [Authorize]
         public ActionResult Details(int? id)
@@ -58,7 +65,13 @@ namespace Assignment2.Controllers
             }
             if(booking.PharmacistId != User.Identity.GetUserId() && booking.PatientId != User.Identity.GetUserId())
             {
-                return HttpNotFound();
+                if (User.IsInRole("Admin"))
+                {
+                    return View(booking);
+                }
+                else {
+                    return HttpNotFound();
+                }
             }
             return View(booking);
         }
@@ -152,43 +165,6 @@ namespace Assignment2.Controllers
         }
 
         // GET: Bookings/Edit/5
-        [Authorize]
-        public ActionResult Edit(int? id)
-        {
-            if (id == null)
-            {
-                return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
-            }
-            Booking booking = db.Bookings.Find(id);
-            if (booking == null)
-            {
-                return HttpNotFound();
-            }
-            if (booking.PharmacistId != User.Identity.GetUserId() && booking.PatientId != User.Identity.GetUserId())
-            {
-                return HttpNotFound();
-            }
-            return View(booking);
-        }
-
-        // POST: Bookings/Edit/5
-        // To protect from overposting attacks, enable the specific properties you want to bind to, for 
-        // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
-        [HttpPost]
-        [ValidateAntiForgeryToken]
-        [Authorize]
-        public ActionResult Edit([Bind(Include = "Id,Start,PatientId,PharmacistId,End,Title")] Booking booking)
-        {
-            if (ModelState.IsValid)
-            {
-                db.Entry(booking).State = EntityState.Modified;
-                db.SaveChanges();
-                return RedirectToAction("Index");
-            }
-            return View(booking);
-        }
-
-        // GET: Bookings/Edit/5
         [Authorize(Roles ="Pharmacist")]
         public ActionResult Confirm(int? id)
         {
@@ -209,7 +185,7 @@ namespace Assignment2.Controllers
         // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        [Authorize]
+        [Authorize(Roles = "Pharmacist")]
         public ActionResult Confirm([Bind(Include = "Id,Start,PatientId,End,Title")] Booking booking)
         {
             if (User.IsInRole("Pharmacist"))
@@ -256,7 +232,14 @@ namespace Assignment2.Controllers
             }
             if (booking.PharmacistId != User.Identity.GetUserId() && booking.PatientId != User.Identity.GetUserId())
             {
-                return HttpNotFound();
+                if (User.IsInRole("Admin"))
+                {
+                    return View(booking);
+                }
+                else
+                {
+                    return HttpNotFound();
+                }
             }
             return View(booking);
         }

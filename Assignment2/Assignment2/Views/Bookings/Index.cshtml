@@ -11,6 +11,10 @@
         @Html.ActionLink("Ongoing Applications", "Applications")
     </p>
 }
+else if (User.IsInRole("Admin"))
+{
+    { Response.Redirect("/Bookings/ViewAllBookings"); }
+}
 else
 {
     <p>
@@ -40,7 +44,6 @@ else
                     @Html.DisplayFor(modelItem => item.Start)
                 </td>
                 <td>
-                    @Html.ActionLink("Edit", "Edit", new { id = item.Id }) |
                     @Html.ActionLink("Details", "Details", new { id = item.Id }) |
                     @Html.ActionLink("Delete", "Delete", new { id = item.Id })
                 </td>

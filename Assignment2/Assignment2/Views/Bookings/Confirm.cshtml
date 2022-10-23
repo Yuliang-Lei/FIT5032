@@ -6,7 +6,7 @@
 }
 
 <h2>Confirm Your Appointment</h2>
-
+@Html.ActionLink("Back", "Index")
 
 @using (Html.BeginForm())
 {
@@ -70,9 +70,6 @@
     </div>
 }
 
-<div>
-    @Html.ActionLink("Back to List", "Index")
-</div>
 
 @section Scripts {
     @Scripts.Render("~/bundles/jqueryval")
